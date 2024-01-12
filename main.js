@@ -8,15 +8,19 @@ function createCharacter(name, healthId, progressBarId) {
     damageHP: 100,
     elHP,
     elProgressBar,
+    isFighting: true,
     changeHP: function (count) {
+      if (!this.isFighting) return;
+
       this.damageHP = Math.max(this.damageHP - count, 0);
       this.renderHP();
 
       if (this.damageHP === 0) {
         alert(`Бедный ${this.name} проиграл бой!`);
-        this.elHP.parentNode.parentNode.querySelector(
-          ".button"
-        ).disabled = true;
+        this.isFighting = false;
+        Array.from(document.querySelectorAll(".button")).forEach(
+          (btn) => (btn.disabled = true)
+        );
       }
     },
     renderHPLife: function () {
@@ -50,11 +54,17 @@ function init() {
     "progressbar-enemy"
   );
 
-  const btn = document.getElementById("btn-kick");
-  btn.addEventListener("click", () => {
+  const btnKick = document.getElementById("btn-kick");
+  btnKick.addEventListener("click", () => {
     console.log("Kick");
     character.changeHP(random(20));
     enemy.changeHP(random(20));
+  });
+
+  const btnFire = document.getElementById("btn-fire");
+  btnFire.addEventListener("click", () => {
+    console.log("Fire Blast");
+    enemy.changeHP(random(30));
   });
 
   character.renderHP();
