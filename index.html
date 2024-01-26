@@ -20,16 +20,17 @@
           alt="Pokemon"
         />
       </header>
+      <div class="selection">
+        <select id="player-pokemon"></select>
+        <select id="enemy-pokemon"></select>
+      </div>
       <div class="playground">
         <!-- Character -->
         <div class="pokemon character">
           <span class="lvl">Lv. 1</span>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/ru/7/77/Pikachu.png"
-            class="sprite"
-          />
+          <img class="sprite" id="sprite-character" />
           <div class="details">
-            <h2 class="name" id="name-character">Pikachu</h2>
+            <h2 class="name" id="name-character"></h2>
             <div class="hp">
               <div class="bar">
                 <div
@@ -38,24 +39,20 @@
                   style="width: 100%"
                 ></div>
               </div>
-              <span class="text" id="health-character">100 / 100</span>
+              <span class="text" id="health-character"></span>
             </div>
           </div>
         </div>
         <!-- Controls -->
         <div class="control">
-          <button class="button" id="btn-kick">Thunder Jolt</button>
-          <button id="btn-fire" id="btn-fire">Fire Blast</button>
+          <div id="attack-buttons" class="attack-buttons"></div>
         </div>
         <!-- Enemy -->
         <div class="pokemon enemy">
           <span class="lvl">Lv. 1</span>
-          <img
-            src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png"
-            class="sprite"
-          />
+          <img class="sprite" id="sprite-enemy" />
           <div class="details">
-            <h2 class="name" id="name-enemy">Charmander</h2>
+            <h2 class="name" id="name-enemy"></h2>
             <div class="hp">
               <div class="bar">
                 <div
@@ -64,7 +61,7 @@
                   style="width: 100%"
                 ></div>
               </div>
-              <span class="text" id="health-enemy">100 / 100</span>
+              <span class="text" id="health-enemy"></span>
             </div>
           </div>
         </div>
@@ -72,6 +69,6 @@
       <!-- Logs -->
       <div class="logs" id="logs"></div>
     </div>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
   </body>
 </html>

@@ -602,3 +602,33 @@ h1 {
 .logs {
   color: white;
 }
+
+.selection {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.selection select {
+  padding: 10px 15px;
+  margin: 0 10px;
+  border-radius: 5px;
+  border: 2px solid #4caf50;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.selection select:hover,
+.selection select:focus {
+  border-color: #45a049;
+  background-color: #e9e9e9;
+}
+
+.selection select::-ms-expand {
+  display: none;
+}
